@@ -1,6 +1,6 @@
 import { createEl } from '../utils.domBuilder.js';
 
-export function createDropdown({ triggerEl = null, position = [0, 0], width = 100, actions = [] }) {
+export function createDropdown({ triggerEl = null, position = [0, 0], actions = [] }) {
     // Map all actions into button elements
     const buttons = actions.map(({ icon, title, onClick }) => {
         const button = createEl('button', {
@@ -26,11 +26,9 @@ export function createDropdown({ triggerEl = null, position = [0, 0], width = 10
         const rect = triggerEl.getBoundingClientRect();
         container.style.left = `${rect.left}px`;
         container.style.top = `${rect.top}px`;
-        container.style.width = `${rect.width}px`;
     } else {
         container.style.left = `${position[0]}px`;
         container.style.top = `${position[1]}px`;
-        container.style.width = `${width}px`;
     }
 
     // Append container to document
